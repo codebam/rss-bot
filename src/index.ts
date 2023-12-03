@@ -11,7 +11,12 @@ export default {
 			new URL(
 				`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/sendMessage?` + new URLSearchParams({ chat_id: '@canadanewschannel', text })
 			);
-		const rss = ['https://www.cbc.ca/webfeed/rss/rss-topstories', 'http://ctvnews.ca/rss/TopStories'];
+		const rss = [
+			'https://www.cbc.ca/webfeed/rss/rss-canada',
+			'http://ctvnews.ca/rss/Canada',
+			'https://globalnews.ca/feed/',
+			'https://www.theguardian.com/world/canada/rss',
+		];
 		await Promise.all(
 			rss.map(async (url) => {
 				const response = await fetch(url);
