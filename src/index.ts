@@ -24,7 +24,7 @@ export default {
 				const feed = htmlparser2.parseFeed(text);
 				const last = feed?.items[0] ?? { link: '' };
 				const last_kv = await env.KV.get(url);
-				if (last.link !== last_kv) {
+				if (last.link !== last_kv && last.link !== '') {
 					const send_message = telegram_message(last.link ?? '');
 					const response = await fetch(send_message);
 					console.log(await response.text());
