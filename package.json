@@ -12,6 +12,6 @@
     "htmlparser2": "^9.0.0",
     "rss-parser": "^3.13.0",
     "typescript": "^5.0.4",
-    "wrangler": "^3.0.0"
+    "wrangler": "^3.19.0"
   }
 }
